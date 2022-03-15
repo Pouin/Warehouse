@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Мой склад</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Иванов Иван Иваныч</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Настройки</string>
+
+    <!-- menu items   -->
+    <string name="menu_settings">Настройки</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="aboutApp">О приложении</string>
+    <string name="listTasks">Список заданий</string>
+    <string name="receipt">Поступление</string>
+    <string name="receipting">Оприходование</string>
+    <string name="unformedProducts">Неоформленная продукция</string>
+    <string name="picking">Комплектование</string>
+    <string name="pickingComp">Комплектование КВ</string>
+    <string name="storage">Хранение</string>
+    <string name="transferItem">Перемещение</string>
+    <string name="inventory">Инвентаризация</string>
+
+    <string name="lorem_ipsum_title">Lorem Ipsum"</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply placeholder text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry\'s standard placeholder text ever
+        since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+        type specimen book"
+    </string>
+    <string name="versionApp">Версия 1.0.0 (alfa)</string>
+    <string name="bthStatus_notCon">Bluetooth Status: Not connect</string>
+    <string name="bthStatus_failed">Bluetooth Status: Connection failed</string>
+    <string name="btnStatus_Connect">Bluetooth Status: Connected to </string>
+    <string name="connectBth">Подключить сканер</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+
+</resources>

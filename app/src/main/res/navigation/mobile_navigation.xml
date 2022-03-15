@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/listTasksFragment">
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="ru.energomera.mywarehouse.ui.inventoryFragment"
+        android:label="fragment_inventory"
+        tools:layout="@layout/fragment_inventory" />
+    <fragment
+        android:id="@+id/listTasksFragment"
+        android:name="ru.energomera.mywarehouse.ui.ListTasksFragment"
+        android:label="fragment_list_tasks"
+        tools:layout="@layout/fragment_list_tasks" />
+    <fragment
+        android:id="@+id/transferItemFragment"
+        android:name="ru.energomera.mywarehouse.ui.transferItemFragment"
+        android:label="fragment_transfer_item"
+        tools:layout="@layout/fragment_transfer_item" />
+    <fragment
+        android:id="@+id/putFormedItemsFragment"
+        android:name="ru.energomera.mywarehouse.ui.putFormedItemsFragment"
+        android:label="fragment_put_formed_items"
+        tools:layout="@layout/fragment_put_formed_items" />
+</navigation>

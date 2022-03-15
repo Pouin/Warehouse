@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:menuCategory="secondary">
+        <item
+            android:id="@+id/nav_listTasks"
+            android:icon="@drawable/baseline_list_black_24dp"
+            android:title="@string/listTasks" />
+    </group>
+    <item android:menuCategory="container" android:title="@string/receipt">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_putFormedItems"
+                    android:icon="@drawable/baseline_input_black_24dp"
+                    android:title="@string/receipting" />
+                <item
+                    android:id="@+id/nav_putUnformedItems"
+                    android:icon="@drawable/baseline_add_to_queue_black_24dp"
+                    android:title="@string/unformedProducts" />
+            </group>
+        </menu>
+    </item>
+    <item android:menuCategory="container" android:title="@string/picking">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_postCompItems"
+                    android:icon="@drawable/baseline_content_paste_search_black_24dp"
+                    android:title="@string/pickingComp" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:menuCategory="container" android:title="@string/storage">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_transfer"
+                    android:icon="@drawable/baseline_transfer_within_a_station_black_24dp"
+                    android:title="@string/transferItem" />
+                <item
+                    android:id="@+id/nav_inventory"
+                    android:icon="@drawable/baseline_inventory_black_24dp"
+                    android:title="@string/inventory" />
+            </group>
+        </menu>
+    </item>
+
+    <group android:menuCategory="system" >
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/menu_settings" />
+        <item
+            android:id="@+id/nav_aboutApp"
+            android:icon="@drawable/baseline_info_black_24dp"
+            android:title="@string/aboutApp" />
+    </group>
+</menu>
