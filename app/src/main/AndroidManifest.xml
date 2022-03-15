@@ -24,8 +24,7 @@
         android:theme="@style/Theme.MyWarehouse">
         <activity
             android:name=".ui.settings.SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings" />
+            android:exported="true" android:label="@string/title_activity_settings" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

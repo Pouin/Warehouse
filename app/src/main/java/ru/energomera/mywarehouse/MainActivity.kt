@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity(), NavigationHost {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
         bt = BluetoothSPP(this)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as? NavHostFragment
@@ -79,11 +81,6 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-//        checkBluetoothConnect()
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val result = super.onCreateOptionsMenu(menu)
         // Using findViewById because NavigationView exists in different layout files
@@ -106,7 +103,6 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         }
         return super.onOptionsItemSelected(item)
     }
-
 
     private fun checkPermission(){
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) !=
