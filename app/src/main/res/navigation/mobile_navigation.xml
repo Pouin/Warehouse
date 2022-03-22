@@ -15,13 +15,14 @@
         android:label="fragment_list_tasks"
         tools:layout="@layout/fragment_list_tasks" />
     <fragment
-        android:id="@+id/transferItemFragment"
-        android:name="ru.energomera.mywarehouse.ui.transferItemFragment"
-        android:label="fragment_transfer_item"
-        tools:layout="@layout/fragment_transfer_item" />
-    <fragment
         android:id="@+id/putFormedItemsFragment"
         android:name="ru.energomera.mywarehouse.ui.putFormedItemsFragment"
         android:label="fragment_put_formed_items"
         tools:layout="@layout/fragment_put_formed_items" />
+    <fragment
+        android:id="@+id/transferItemFragment"
+        android:name="ru.energomera.mywarehouse.ui.transferItemFragment"
+        android:label="fragment_transfer_item"
+        tools:layout="@layout/fragment_transfer_item" />
+
 </navigation>

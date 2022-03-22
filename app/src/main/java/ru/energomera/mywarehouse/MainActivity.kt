@@ -47,9 +47,8 @@ class MainActivity : AppCompatActivity(), NavigationHost {
 
         bt = BluetoothSPP(this)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as? NavHostFragment
-            ?: return
-        navController = findNavController(R.id.nav_host_fragment_content_main)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainNavigationHostFragment) as? NavHostFragment ?: return
+        navController = findNavController(R.id.mainNavigationHostFragment)
         appBarConfiguration = AppBarConfiguration(TOOLBAR_DESTINATION)
 
         val mainBottomNavigationView = findViewById<BottomNavigationView>(R.id.mainBottomNavigationView)

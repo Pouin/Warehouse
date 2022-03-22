@@ -21,11 +21,17 @@ interface InitViews {
     fun observeViewModel()
 }
 
+/**
+ * Интерфейс для изменения Toolbar внутри MainActivity
+ */
 interface NavigationHost {
     fun registerToolbarWithNavigation(toolbar: Toolbar)
 }
 
-class MainNavigationFragment {
+/**
+ * [MainNavigationFragment] регистрирует панель инструментов из фрагмента с активностью
+ */
+abstract class MainNavigationFragment: Fragment(), InitViews {
 
     abstract class MainNavigationFragment: Fragment(), InitViews  {
         private var navigationHost: NavigationHost? = null
@@ -49,6 +55,9 @@ class MainNavigationFragment {
             itemView = view
         }
 
+        /**
+         * Получаем Toolbar из View и передаем его в Activity
+         */
         override fun onResume() {
             super.onResume()
 
