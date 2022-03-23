@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_listTasks"
-        android:icon="@drawable/baseline_list_black_24dp"
-        android:title="@string/listTasks" />
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/menu_settings" />
     <item
-        android:id="@+id/nav_putFormedItems"
-        android:icon="@drawable/baseline_input_black_24dp"
-        android:title="@string/receipting" />
-    <item
-        android:id="@+id/nav_transfer"
-        android:icon="@drawable/baseline_transfer_within_a_station_black_24dp"
-        android:title="@string/transferItem" />
-    <item
-        android:id="@+id/nav_inventory"
-        android:icon="@drawable/baseline_inventory_black_24dp"
-        android:title="@string/inventory" />
-
+        android:id="@+id/nav_aboutApp"
+        android:icon="@drawable/baseline_info_black_24dp"
+        android:title="@string/aboutApp" />
 </menu>

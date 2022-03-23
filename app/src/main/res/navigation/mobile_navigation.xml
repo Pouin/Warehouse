@@ -3,26 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/listTasksFragment">
+    app:startDestination="@id/nav_listTasks">
     <fragment
-        android:id="@+id/inventoryFragment"
+        android:id="@+id/nav_inventory"
         android:name="ru.energomera.mywarehouse.ui.inventoryFragment"
-        android:label="fragment_inventory"
+        android:label="@string/inventory"
         tools:layout="@layout/fragment_inventory" />
     <fragment
-        android:id="@+id/listTasksFragment"
+        android:id="@+id/nav_listTasks"
         android:name="ru.energomera.mywarehouse.ui.ListTasksFragment"
-        android:label="fragment_list_tasks"
+        android:label="@string/listTasks"
         tools:layout="@layout/fragment_list_tasks" />
     <fragment
-        android:id="@+id/putFormedItemsFragment"
+        android:id="@+id/nav_putFormedItems"
         android:name="ru.energomera.mywarehouse.ui.putFormedItemsFragment"
-        android:label="fragment_put_formed_items"
+        android:label="@string/receipting"
         tools:layout="@layout/fragment_put_formed_items" />
     <fragment
-        android:id="@+id/transferItemFragment"
+        android:id="@+id/nav_transfer"
         android:name="ru.energomera.mywarehouse.ui.transferItemFragment"
-        android:label="fragment_transfer_item"
+        android:label="@string/transferItem"
         tools:layout="@layout/fragment_transfer_item" />
+    <fragment
+        android:id="@+id/nav_putUnformedItems"
+        android:name="ru.energomera.mywarehouse.ui.PutUnformedItemsFragment"
+        android:label="@string/unformedProducts"
+        tools:layout="@layout/fragment_put_unformed_items" />
+    <fragment
+        android:id="@+id/nav_postCompItems"
+        android:name="ru.energomera.mywarehouse.ui.PostCompItemsFragment"
+        android:label="@string/pickingComp"
+        tools:layout="@layout/fragment_post_comp_items" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ru.energomera.mywarehouse.ui.SettingsFragment"
+        android:label="@string/menu_settings"  />
+    <fragment
+        android:id="@+id/nav_aboutApp"
+        android:name="ru.energomera.mywarehouse.ui.AboutAppFragment"
+        android:label="@string/aboutApp"
+        tools:layout="@layout/fragment_about_app" />
 
 </navigation>

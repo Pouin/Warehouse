@@ -9,21 +9,10 @@ import ru.energomera.mywarehouse.R
 import ru.energomera.mywarehouse.common.MainNavigationFragment
 
 
-class transferItemFragment : MainNavigationFragment()  {
+class transferItemFragment : Fragment()  {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_transfer_item, container, false)
     }
 
-    override fun initializeViews() {
-        TODO("Not yet implemented")
-    }
-
-    override fun observeViewModel() {
-        TODO("Not yet implemented")
-    }
 }

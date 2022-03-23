@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:menuCategory="secondary">
+    <group android:menuCategory="system">
         <item
             android:id="@+id/nav_listTasks"
             android:icon="@drawable/baseline_list_black_24dp"
