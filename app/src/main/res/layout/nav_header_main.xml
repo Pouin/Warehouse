@@ -7,13 +7,12 @@
     android:background="@drawable/side_nav_bar"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:padding="14dp">
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:paddingTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/avatar_1"  />
@@ -22,7 +21,6 @@
         android:id="@+id/employeeFIO"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="4dp"
         android:text="@string/nav_header_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

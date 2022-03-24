@@ -5,9 +5,7 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.view.Menu
 import androidx.core.app.ActivityCompat
-import androidx.navigation.NavController
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import app.akexorcist.bluetotohspp.library.BluetoothState
 
@@ -21,12 +19,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import ru.energomera.mywarehouse.R
-import ru.energomera.mywarehouse.common.NavigationHost
 
 class MainActivity : AppCompatActivity()  {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private var navController: NavController? = null
     private val permissionCode = 2
     private var bt: BluetoothSPP? = null
 
@@ -54,12 +50,12 @@ class MainActivity : AppCompatActivity()  {
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
-        navController = findNavController(R.id.nav_host_fragment)
+        val navController = findNavController(R.id.nav_host_fragment)
 
         appBarConfiguration = AppBarConfiguration(TOOLBAR_DESTINATION, drawerLayout)
 
-        setupActionBarWithNavController(navController!!, appBarConfiguration)
-        navView.setupWithNavController(navController!!)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {
