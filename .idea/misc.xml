@@ -19,6 +19,7 @@
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/drawable/ic_settings_black_24dp.xml" value="0.21666666666666667" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/drawable/ic_slideshow_black_24dp.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/drawable/side_nav_bar.xml" value="0.26510416666666664" />
+        <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-land/activity_main.xml" value="0.34684684684684686" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-land/settings_activity.xml" value="0.33" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-large/settings_activity.xml" value="0.159765625" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-sw600dp/settings_activity.xml" value="0.159765625" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-w600dp/content_main.xml" value="0.3684684684684685" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-w600dp/fragment_transform.xml" value="0.32395833333333335" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout-w600dp/settings_activity.xml" value="0.2" />
+        <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout/activity_login.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout/app_bar_main.xml" value="0.359375" />
         <entry key="..\:/Users/frolovaa/AndroidStudioProjects/MyWarehouse/app/src/main/res/layout/content_main.xml" value="0.3133561643835616" />
@@ -62,7 +64,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

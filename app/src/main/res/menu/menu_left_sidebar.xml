@@ -3,27 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:menuCategory="system">
+    <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_listTasks"
             android:icon="@drawable/baseline_list_black_24dp"
             android:title="@string/listTasks" />
     </group>
-    <item android:menuCategory="container" android:title="@string/receipt">
+    <item android:id="@+id/menu_receipt"
+        android:menuCategory="container"
+        android:title="@string/receipt">
         <menu>
             <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/nav_putFormedItems"
-                    android:icon="@drawable/baseline_input_black_24dp"
-                    android:title="@string/receipting" />
-                <item
-                    android:id="@+id/nav_putUnformedItems"
-                    android:icon="@drawable/baseline_add_to_queue_black_24dp"
-                    android:title="@string/unformedProducts" />
+            <item
+                android:id="@+id/nav_putFormedItems"
+                android:icon="@drawable/baseline_input_black_24dp"
+                android:title="@string/receipting" />
+            <item
+                android:id="@+id/nav_putUnformedItems"
+                android:icon="@drawable/baseline_add_to_queue_black_24dp"
+                android:title="@string/unformedProducts" />
             </group>
         </menu>
     </item>
-    <item android:menuCategory="container" android:title="@string/picking">
+
+    <item android:id="@+id/menu_picking"
+        android:menuCategory="container"
+        android:title="@string/picking">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -34,7 +39,9 @@
         </menu>
     </item>
 
-    <item android:menuCategory="container" android:title="@string/storage">
+    <item android:id="@+id/menu_storage"
+        android:menuCategory="container"
+        android:title="@string/storage">
         <menu>
             <group android:checkableBehavior="single">
                 <item
@@ -49,14 +56,20 @@
         </menu>
     </item>
 
-    <group android:menuCategory="system" >
-        <item
-            android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_settings_black_24dp"
-            android:title="@string/menu_settings" />
-        <item
-            android:id="@+id/nav_aboutApp"
-            android:icon="@drawable/baseline_info_black_24dp"
-            android:title="@string/aboutApp" />
-    </group>
+    <item android:id="@+id/menu_system"
+        android:menuCategory="system"
+        android:title="@string/menu_system">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings_black_24dp"
+                    android:title="@string/menu_settings" />
+                <item
+                    android:id="@+id/nav_aboutApp"
+                    android:icon="@drawable/baseline_info_black_24dp"
+                    android:title="@string/aboutApp" />
+            </group>
+        </menu>
+    </item>
 </menu>

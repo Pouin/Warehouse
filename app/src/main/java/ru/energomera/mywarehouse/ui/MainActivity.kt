@@ -1,10 +1,11 @@
-package ru.energomera.mywarehouse
+package ru.energomera.mywarehouse.ui
 
 import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.Menu
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
@@ -19,6 +20,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import ru.energomera.mywarehouse.R
 import ru.energomera.mywarehouse.common.NavigationHost
 
 class MainActivity : AppCompatActivity()  {
@@ -51,9 +53,9 @@ class MainActivity : AppCompatActivity()  {
         setSupportActionBar(toolbar)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-//        val navHostFragment = supportFragmentManager.findFragmentById(R.id.mainBottomNavigationView) as? NavHostFragment ?: return
         val navView: NavigationView = findViewById(R.id.nav_view)
         navController = findNavController(R.id.nav_host_fragment)
+
         appBarConfiguration = AppBarConfiguration(TOOLBAR_DESTINATION, drawerLayout)
 
         setupActionBarWithNavController(navController!!, appBarConfiguration)

@@ -3,21 +3,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
+    android:layout_height="176dp"
     android:background="@drawable/side_nav_bar"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="14dp">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="8dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:paddingTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avatar_1" />
+        app:srcCompat="@drawable/avatar_1"  />
+
+    <TextView
+        android:id="@+id/employeeFIO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:text="@string/nav_header_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"/>
 
     <TextView
         android:id="@+id/versionApp"
@@ -25,18 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/versionApp"
         android:textSize="12sp"
-        android:paddingStart="5dp"
-        app:layout_constraintStart_toEndOf="@id/imageView"
-        app:layout_constraintBottom_toTopOf="@id/employeeFIO" />
-
-    <TextView
-        android:id="@+id/employeeFIO"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="@string/nav_header_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView"/>
+        app:layout_constraintTop_toBottomOf="@id/employeeFIO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
