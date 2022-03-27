@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.core.app.ActivityCompat
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import app.akexorcist.bluetotohspp.library.BluetoothState
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity()  {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val permissionCode = 2
-    private var bt: BluetoothSPP? = null
 
     companion object {
         private val TOOLBAR_DESTINATION = setOf(
@@ -42,8 +42,7 @@ class MainActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        bt = BluetoothSPP(this)
+        checkPermission()
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -74,22 +73,6 @@ class MainActivity : AppCompatActivity()  {
 //        }
 //    }
 
-    override fun onStart() {
-        super.onStart()
-
-        checkPermission()
-        //enable bluetooth and bt service.
-        if (!bt!!.isBluetoothEnabled) {
-            val intent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-            startActivityForResult(intent, BluetoothState.REQUEST_ENABLE_BT)
-        } else {
-            if (!bt!!.isServiceAvailable) {
-                bt!!.setupService()
-                bt!!.startService(BluetoothState.DEVICE_ANDROID)
-            }
-        }
-    }
-
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        val result = super.onCreateOptionsMenu(menu)
 //        // Using findViewById because NavigationView exists in different layout files
@@ -103,15 +86,16 @@ class MainActivity : AppCompatActivity()  {
 //        return result
 //    }
 //
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.nav_settings -> {
-//                val navController = findNavController(R.id.nav_host_fragment_content_main)
-//                navController.navigate(R.id.nav_settings)
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_settings -> {
+
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     private fun checkPermission(){
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) !=

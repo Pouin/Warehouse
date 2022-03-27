@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_listTasks"
-            android:icon="@drawable/baseline_list_black_24dp"
-            android:title="@string/listTasks" />
-    </group>
+<!--    <group android:checkableBehavior="single">-->
+<!--        <item-->
+<!--            android:id="@+id/nav_listTasks"-->
+<!--            android:icon="@drawable/baseline_list_black_24dp"-->
+<!--            android:title="@string/listTasks" />-->
+<!--    </group>-->
     <item android:id="@+id/menu_receipt"
         android:menuCategory="container"
         android:title="@string/receipt">

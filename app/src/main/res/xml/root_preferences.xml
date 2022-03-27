@@ -1,13 +1,15 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory app:title="Bluetooth">
+    <PreferenceCategory
+        app:key="settings_Bth"
+        app:title="Bluetooth">
 
         <SwitchPreferenceCompat
+            android:defaultValue="false"
             app:key="bluetoothSwitchConnect"
             app:title="@string/connectBth" />
 
     </PreferenceCategory>
-
-
 
 </PreferenceScreen>
