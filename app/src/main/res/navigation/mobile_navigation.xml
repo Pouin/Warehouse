@@ -3,17 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_listTasks">
+    app:startDestination="@id/nav_postCompItems">
     <fragment
         android:id="@+id/nav_inventory"
         android:name="ru.energomera.mywarehouse.ui.fragment.inventoryFragment"
         android:label="@string/inventory"
         tools:layout="@layout/fragment_inventory" />
-    <fragment
-        android:id="@+id/nav_listTasks"
-        android:name="ru.energomera.mywarehouse.ui.fragment.ListTasksFragment"
-        android:label="@string/listTasks"
-        tools:layout="@layout/fragment_list_tasks" />
     <fragment
         android:id="@+id/nav_putFormedItems"
         android:name="ru.energomera.mywarehouse.ui.fragment.putFormedItemsFragment"
@@ -34,10 +29,11 @@
         android:name="ru.energomera.mywarehouse.ui.fragment.PostCompItemsFragment"
         android:label="@string/pickingComp"
         tools:layout="@layout/fragment_post_comp_items" />
-    <fragment
+    <activity
         android:id="@+id/nav_settings"
-        android:name="ru.energomera.mywarehouse.ui.fragment.SettingsFragment"
-        android:label="@string/menu_settings"  />
+        android:name="ru.energomera.mywarehouse.ui.SettingsActivity"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/activity_settings"/>
     <fragment
         android:id="@+id/nav_aboutApp"
         android:name="ru.energomera.mywarehouse.ui.fragment.AboutAppFragment"

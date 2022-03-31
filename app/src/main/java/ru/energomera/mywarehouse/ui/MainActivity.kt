@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity()  {
         private val TOOLBAR_DESTINATION = setOf(
             R.id.nav_aboutApp,
             R.id.nav_inventory,
-            R.id.nav_listTasks,
+//            R.id.nav_listTasks,
             R.id.nav_postCompItems,
             R.id.nav_putFormedItems,
             R.id.nav_putUnformedItems,
@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        checkPermission()
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -85,30 +84,19 @@ class MainActivity : AppCompatActivity()  {
 //        }
 //        return result
 //    }
+
+
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item.itemId) {
+//            R.id.nav_settings -> {
 //
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_settings -> {
+//                val intent = Intent(this, SettingsActivity::class.java)
+//                startActivity(intent)
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
 
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    private fun checkPermission(){
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) !=
-            PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.BLUETOOTH), permissionCode)
-        }
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.INTERNET) !=
-            PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                arrayOf(Manifest.permission.INTERNET), permissionCode)
-        }
-    }
 
     private fun checkBluetoothConnect() {
 

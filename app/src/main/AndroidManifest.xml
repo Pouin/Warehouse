@@ -22,9 +22,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.MyWarehouse">
         <activity
-            android:name=".ui.fragment.SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_settings" />
+            android:label="Настройки" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="false" />

@@ -1,15 +1,18 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory
-        app:key="settings_Bth"
-        app:title="Bluetooth">
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <SwitchPreferenceCompat
-            android:defaultValue="false"
-            app:key="bluetoothSwitchConnect"
-            app:title="@string/connectBth" />
+    <!-- These settings headers are only used on tablets. -->
 
-    </PreferenceCategory>
+    <header
+        android:fragment="ru.energomera.mywarehouse.ui.SettingsActivity$BluetoothPreferenceFragment"
+        android:icon="@drawable/settings_bluetooth_black_24dp"
+        android:title="@string/settingsBthScan" />
 
-</PreferenceScreen>
+    <header
+        android:fragment="ru.energomera.mywarehouse.ui.SettingsActivity$NotificationPreferenceFragment"
+        android:icon="@drawable/settings_suggest_black_24dp"
+        android:title="@string/generalSettings" />
+
+
+</preference-headers>
