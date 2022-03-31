@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.preference.PreferenceFragmentCompat
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import app.akexorcist.bluetotohspp.library.BluetoothState
 import app.akexorcist.bluetotohspp.library.DeviceList
@@ -51,6 +52,19 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.settings_container, SettingsFragment())
+                .commit()
+        }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    class SettingsFragment : PreferenceFragmentCompat() {
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            setPreferencesFromResource(R.xml.root_preferences, rootKey)
+        }
     }
 
     public override fun onStart() {
