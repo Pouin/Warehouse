@@ -30,7 +30,7 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         textStatus = findViewById(R.id.textStatus)
-        bt = BluetoothSPP(this)
+        bt = BluetoothSPP(this.baseContext)
         btnConnect = findViewById(R.id.btnConnectScan)
 
         if (!bt!!.isBluetoothAvailable) {
@@ -80,7 +80,8 @@ class SettingsActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val textRead: TextView = findViewById(R.id.editTextToScanBth)
-        bt!!.setOnDataReceivedListener { data, message ->
+        val btAdapter: BluetoothAdapter = BluetoothSPP(this.baseContext).bluetoothAdapter
+        BluetoothSPP.OnDataReceivedListener { data, message ->
             textRead.text = message.toString()
         }
     }
