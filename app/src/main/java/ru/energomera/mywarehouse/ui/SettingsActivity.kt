@@ -52,19 +52,7 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.settings_container, SettingsFragment())
-                .commit()
-        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    class SettingsFragment : PreferenceFragmentCompat() {
-        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-            setPreferencesFromResource(R.xml.root_preferences, rootKey)
-        }
     }
 
     public override fun onStart() {
@@ -80,6 +68,20 @@ class SettingsActivity : AppCompatActivity() {
                 bt!!.setupService()
                 bt!!.startService(BluetoothState.DEVICE_ANDROID)
             }
+        }
+
+        val textRead: TextView = findViewById(R.id.editTextToScanBth)
+        bt!!.setOnDataReceivedListener { data, message ->
+            textRead.text = message.toString()
+        }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val textRead: TextView = findViewById(R.id.editTextToScanBth)
+        bt!!.setOnDataReceivedListener { data, message ->
+            textRead.text = message.toString()
         }
     }
 
