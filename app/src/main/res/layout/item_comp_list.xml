@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp"
+    app:contentPadding="10dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemCompLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/CompNumTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="КВ:"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <TextView
+            android:id="@+id/CompNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1365478"
+            android:layout_marginStart="13dp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toTopOf="@id/CompNumTitle"
+            app:layout_constraintStart_toEndOf="@id/CompNumTitle"/>
+
+        <TextView
+            android:id="@+id/TrnNumTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ЗнП:"
+            android:textColor="#616161"
+            app:layout_constraintStart_toStartOf="@id/CompNumTitle"
+            app:layout_constraintTop_toBottomOf="@id/CompNumTitle"/>
+
+        <TextView
+            android:id="@+id/TrnNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Z22_00323"
+            android:layout_marginStart="5dp"
+            android:textColor="#616161"
+            app:layout_constraintStart_toEndOf="@id/TrnNumTitle"
+            app:layout_constraintTop_toBottomOf="@id/CompNumTitle"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

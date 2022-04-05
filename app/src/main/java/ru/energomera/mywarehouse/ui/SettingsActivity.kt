@@ -87,25 +87,27 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun changeStatusBluetooth(bt: BluetoothSPP){
-        var textConnectInfo: TextView? = findViewById(R.id.ConnectInfo)
+        var textDeviceName: TextView? = findViewById(R.id.deviceName)
+        var textDeviceMac: TextView? = findViewById(R.id.deviceMac)
         bt.setBluetoothConnectionListener(object : BluetoothSPP.BluetoothConnectionListener {
             override fun onDeviceDisconnected() {
                 textStatus!!.text = getString(R.string.bthStatus_notCon)
                 btnConnect.text = getString(R.string.connectBth)
-                textConnectInfo!!.text = "Устройство не подключено"
+                textDeviceName!!.text = "Устройство не подключено"
             }
 
             override fun onDeviceConnectionFailed() {
                 textStatus!!.text = getString(R.string.bthStatus_failed)
                 btnConnect.text = getString(R.string.connectBth)
-                textConnectInfo!!.text = "Возникла ошибка при подключению к устройству"
+                textDeviceName!!.text = "Возникла ошибка при подключению к устройству"
             }
 
             override fun onDeviceConnected(name: String, address: String) {
 
                 textStatus!!.text = getString(R.string.btnStatus_Connect)
                 btnConnect.text = getString(R.string.disconnectBth)
-                textConnectInfo!!.text = "Информация о подключении: \nУстройство - ${name} \nMAC - ${address}"
+                textDeviceName!!.text = name
+                textDeviceMac!!.text = address
             }
         })
     }

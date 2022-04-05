@@ -8,28 +8,21 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import ru.energomera.mywarehouse.R
+import ru.energomera.mywarehouse.adapter.CompsItemAdapter
+import ru.energomera.mywarehouse.data.model.local.database.CompListEntity
 
 class PostCompItemsFragment : Fragment() {
-    private var bt: BluetoothSPP? = null
+
+    val itemLists: MutableList<CompListEntity> = generateList()
+    private var compListAdapter = CompsItemAdapter(itemLists)
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_post_comp_items, container, false)
     }
 
-    override fun onStart() {
-        super.onStart()
-
-        bt = BluetoothSPP(context)
-
-        val textRead: TextView = requireView().findViewById(R.id.editTextToScan)
-        bt!!.setOnDataReceivedListener { data, message ->
-            textRead.text = message.toString()
-        }
-
+    fun generateList():List<CompListEntity> {
+        val list = mutableListOf<CompListEntity>()
+        list.add(CompListEntity("13213", "zczcz", ))
     }
-    override fun onResume() {
-        super.onResume()
 
-        bt = BluetoothSPP(context)
-    }
 }

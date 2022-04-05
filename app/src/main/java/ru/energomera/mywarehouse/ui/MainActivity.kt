@@ -65,8 +65,6 @@ class MainActivity : AppCompatActivity()  {
 
     public override fun onDestroy() {
         super.onDestroy()
-        bt = BluetoothSPP(this)
-        bt!!.stopService()
     }
 
 
