@@ -1,4 +1,4 @@
-package ru.energomera.mywarehouse.ui.fragment
+package ru.energomera.mywarehouse.ui.fragmentMainActivity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.item_comp_list.view.*
 import ru.energomera.mywarehouse.R
 import ru.energomera.mywarehouse.data.model.local.database.CompListEntity
 
-interface OnItemClickCallback {
+interface OnCompItemClickCallback {
 
     /**
      * Функция передающая клик по элементу
@@ -16,18 +16,17 @@ interface OnItemClickCallback {
     fun onItemClick(compNum: String)
 }
 
-class CompsItemAdapter(private val CompList:List<CompListEntity>/*private val onItemClickCallback: OnItemClickCallback*/): RecyclerView.Adapter<CompsItemAdapter.CompListViewHolder>() {
+class CompsItemAdapter(private val warehouse:List<CompListEntity>/*private val onItemClickCallback: OnItemClickCallback*/): RecyclerView.Adapter<CompsItemAdapter.CompListViewHolder>() {
 
     /**
-     * Переменная хранящая список объектов [CompListEntity], по умолчанию содержит пустой список
+     * Переменная хранящая список объектов [WarehouseEntity], по умолчанию содержит пустой список
      */
-    private var compList = CompList//mutableListOf<CompListEntity>()
-    private val onItemClickCallback: OnItemClickCallback? = null
+    private var compList = warehouse//mutableListOf<CompListEntity>()
+    private val onCompItemClickCallback: OnCompItemClickCallback? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CompListViewHolder {
-        return CompListViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_comp_list, parent, false)
-        )
+        val binding = LayoutInflater.from(parent.context).inflate(R.layout.item_comp_list, parent, false)
+        return CompListViewHolder(binding)
     }
 
     /**
@@ -35,7 +34,7 @@ class CompsItemAdapter(private val CompList:List<CompListEntity>/*private val on
      * данные для соответствующего элемента RecyclerView
      */
     override fun onBindViewHolder(holder: CompListViewHolder, position: Int) {
-        holder.bind(compList[position], onItemClickCallback!!)
+        holder.bind(compList[position])//, onItemClickCallback!!)
     }
 
     /**
@@ -46,14 +45,14 @@ class CompsItemAdapter(private val CompList:List<CompListEntity>/*private val on
     }
 
     class CompListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        fun bind(model: CompListEntity, onItemClickCallback: OnItemClickCallback) {
+        fun bind(model: CompListEntity){//}, onItemClickCallback: OnItemClickCallback) {
             itemView.CompNum.text = model.compNum
             itemView.TrnNum.text = model.trnNum
 
             //обрабатываем клик по элементу списка
-            itemView.setOnClickListener {
-                onItemClickCallback.onItemClick(model.compNum)
-            }
+//            itemView.setOnClickListener {
+//                onItemClickCallback.onItemClick(model.compNum)
+//            }
         }
     }
 

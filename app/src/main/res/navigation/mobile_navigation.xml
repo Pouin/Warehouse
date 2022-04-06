@@ -6,27 +6,27 @@
     app:startDestination="@id/nav_postCompItems">
     <fragment
         android:id="@+id/nav_inventory"
-        android:name="ru.energomera.mywarehouse.ui.fragment.inventoryFragment"
+        android:name="ru.energomera.mywarehouse.ui.fragmentMainActivity.inventoryFragment"
         android:label="@string/inventory"
         tools:layout="@layout/fragment_inventory" />
     <fragment
         android:id="@+id/nav_putFormedItems"
-        android:name="ru.energomera.mywarehouse.ui.fragment.putFormedItemsFragment"
+        android:name="ru.energomera.mywarehouse.ui.fragmentMainActivity.putFormedItemsFragment"
         android:label="@string/receipting"
         tools:layout="@layout/fragment_put_formed_items" />
     <fragment
         android:id="@+id/nav_transfer"
-        android:name="ru.energomera.mywarehouse.ui.fragment.transferItemFragment"
+        android:name="ru.energomera.mywarehouse.ui.fragmentMainActivity.transferItemFragment"
         android:label="@string/transferItem"
         tools:layout="@layout/fragment_transfer_item" />
     <fragment
         android:id="@+id/nav_putUnformedItems"
-        android:name="ru.energomera.mywarehouse.ui.fragment.PutUnformedItemsFragment"
+        android:name="ru.energomera.mywarehouse.ui.fragmentMainActivity.PutUnformedItemsFragment"
         android:label="@string/unformedProducts"
         tools:layout="@layout/fragment_put_unformed_items" />
     <fragment
         android:id="@+id/nav_postCompItems"
-        android:name="ru.energomera.mywarehouse.ui.fragment.PostCompItemsFragment"
+        android:name="ru.energomera.mywarehouse.ui.fragmentMainActivity.PostCompItemsFragment"
         android:label="@string/pickingComp"
         tools:layout="@layout/fragment_post_comp_items" />
 <!--    <fragment-->
@@ -41,7 +41,7 @@
         tools:layout="@layout/activity_settings"/>
     <fragment
         android:id="@+id/nav_aboutApp"
-        android:name="ru.energomera.mywarehouse.ui.fragment.AboutAppFragment"
+        android:name="ru.energomera.mywarehouse.ui.fragmentMainActivity.AboutAppFragment"
         android:label="@string/aboutApp"
         tools:layout="@layout/fragment_about_app" />
 

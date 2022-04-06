@@ -4,7 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="10dp"
     android:foreground="?android:attr/selectableItemBackground"
     android:clickable="true"
@@ -15,59 +14,60 @@
     app:cardBackgroundColor="#FFFFFF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/itemCompLayout"
+        android:id="@+id/itemGrnLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/CompNumTitle"
+            android:id="@+id/GrnNumTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="КВ:"
+            android:text="УОП:"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
             android:textColor="#000000"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
         <TextView
-            android:id="@+id/CompNum"
+            android:id="@+id/GrnNum"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="1365478"
+            android:text="ZG0000073611"
             android:layout_marginStart="13dp"
             android:textColor="#000000"
-            app:layout_constraintTop_toTopOf="@id/CompNumTitle"
-            app:layout_constraintStart_toEndOf="@id/CompNumTitle"/>
+            app:layout_constraintTop_toTopOf="@id/GrnNumTitle"
+            app:layout_constraintStart_toEndOf="@id/GrnNumTitle"/>
 
         <TextView
-            android:id="@+id/TrnNumTitle"
+            android:id="@+id/VendorTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ЗнП:"
+            android:text="Поставщик:"
             android:textColor="#616161"
-            app:layout_constraintStart_toStartOf="@id/CompNumTitle"
-            app:layout_constraintTop_toBottomOf="@id/CompNumTitle"/>
+            app:layout_constraintStart_toStartOf="@id/GrnNumTitle"
+            app:layout_constraintTop_toBottomOf="@id/GrnNumTitle"/>
 
         <TextView
-            android:id="@+id/TrnNum"
+            android:id="@+id/VendorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Z22_00323"
             android:layout_marginStart="5dp"
             android:textColor="#616161"
-            app:layout_constraintStart_toEndOf="@id/TrnNumTitle"
-            app:layout_constraintTop_toBottomOf="@id/CompNumTitle"/>
+            app:layout_constraintStart_toEndOf="@id/VendorTitle"
+            app:layout_constraintTop_toBottomOf="@id/GrnNumTitle"/>
 
         <TextView
-            android:id="@+id/StatusComp"
+            android:id="@+id/DateShip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="В ожидании"
+            android:text="23.09/2022"
             android:layout_marginStart="5dp"
-            android:textColor="#FFAC1E"
+            android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.cardview.widget.CardView>
