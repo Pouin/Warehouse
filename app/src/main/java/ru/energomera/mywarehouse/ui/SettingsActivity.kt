@@ -1,6 +1,7 @@
 package ru.energomera.mywarehouse.ui
 
 import android.Manifest
+import android.app.Activity
 import android.bluetooth.BluetoothAdapter
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,15 +12,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.preference.PreferenceFragmentCompat
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import app.akexorcist.bluetotohspp.library.BluetoothState
 import app.akexorcist.bluetotohspp.library.DeviceList
 
 class SettingsActivity : AppCompatActivity() {
 
-    private var bt: BluetoothSPP? = null
+    lateinit var bt: BluetoothSPP
     var textStatus: TextView? = null
 
     lateinit var btnConnect: Button
@@ -30,59 +29,55 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         textStatus = findViewById(R.id.textStatus)
-        bt = BluetoothSPP(this.baseContext)
+        bt = BluetoothSPP(applicationContext)
         btnConnect = findViewById(R.id.btnConnectScan)
+        val textRead: TextView = findViewById(R.id.editTextToScanBth)
 
-        if (!bt!!.isBluetoothAvailable) {
+        if (!bt.isBluetoothAvailable) {
             Toast.makeText(applicationContext, "Bluetooth is not available", Toast.LENGTH_SHORT).show()
             finish()
         }
         else
-            changeStatusBluetooth(bt!!)
+            changeStatusBluetooth(bt)
+
+        bt.setOnDataReceivedListener { data, message ->
+            textRead.text = message.toString()
+        }
 
         btnConnect.setOnClickListener {
             if (btnConnect.text == getString(R.string.connectBth)) {
                 //connecting other kind of devices
-                bt!!.setDeviceTarget(BluetoothState.DEVICE_OTHER)
+                bt.setDeviceTarget(BluetoothState.DEVICE_OTHER)
                 val intent = Intent(applicationContext, DeviceList::class.java)
                 startActivityForResult(intent, BluetoothState.REQUEST_CONNECT_DEVICE)
             } else if (btnConnect.text == getString(R.string.disconnectBth)) {
                 //disconnect from a device
-                if (bt!!.serviceState == BluetoothState.STATE_CONNECTED) bt!!.disconnect()
+                if (bt.serviceState == BluetoothState.STATE_CONNECTED) bt.disconnect()
             }
         }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    public override fun onStart() {
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        bt.stopService()
+//    }
+
+    override fun onStart() {
         super.onStart()
 
         checkPermission()
 
-        if (!bt!!.isBluetoothEnabled) {
+        if (!bt.isBluetoothEnabled) {
             val intent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
             startActivityForResult(intent, BluetoothState.REQUEST_ENABLE_BT)
         } else {
-            if (!bt!!.isServiceAvailable) {
-                bt!!.setupService()
-                bt!!.startService(BluetoothState.DEVICE_ANDROID)
+            if (!bt.isServiceAvailable) {
+                bt.setupService()
+                bt.startService(BluetoothState.DEVICE_OTHER)
+                changeStatusBluetooth(bt)
             }
-        }
-
-        val textRead: TextView = findViewById(R.id.editTextToScanBth)
-        bt!!.setOnDataReceivedListener { data, message ->
-            textRead.text = message.toString()
-        }
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val textRead: TextView = findViewById(R.id.editTextToScanBth)
-        val btAdapter: BluetoothAdapter = BluetoothSPP(this.baseContext).bluetoothAdapter
-        BluetoothSPP.OnDataReceivedListener { data, message ->
-            textRead.text = message.toString()
         }
     }
 
@@ -103,6 +98,11 @@ class SettingsActivity : AppCompatActivity() {
             }
 
             override fun onDeviceConnected(name: String, address: String) {
+
+//                val stateIntent = Intent(applicationContext, bt)
+//                startActivityForResult(stateIntent, BluetoothState.STATE_CONNECTED)
+//                val stateIntent = Intent(applicationContext, bt)
+//                startActivityForResult(stateIntent, BluetoothState.)
 
                 textStatus!!.text = getString(R.string.btnStatus_Connect)
                 btnConnect.text = getString(R.string.disconnectBth)
@@ -125,14 +125,13 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult (requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
-            if (resultCode == RESULT_OK) bt!!.connect(data)
+            if (resultCode == RESULT_OK) bt.connect(data)
         } else if (requestCode == BluetoothState.REQUEST_ENABLE_BT) {
-            if (resultCode == RESULT_OK) {
-                bt!!.setupService()
-                bt!!.startService(BluetoothState.DEVICE_ANDROID)
+            if (resultCode == Activity.RESULT_OK) {
+                bt.setupService()
             } else {
                 Toast.makeText(
                     applicationContext, "Bluetooth was not enabled.", Toast.LENGTH_SHORT
@@ -142,4 +141,20 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
+//    override fun onActivityResult (requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
+//            if (resultCode == RESULT_OK) bt.connect(data)
+//        } else if (requestCode == BluetoothState.REQUEST_ENABLE_BT) {
+//            if (resultCode == RESULT_OK) {
+//                bt.setupService()
+//                bt.startService(BluetoothState.DEVICE_ANDROID)
+//            } else {
+//                Toast.makeText(
+//                    applicationContext, "Bluetooth was not enabled.", Toast.LENGTH_SHORT
+//                ).show()
+//                finish()
+//            }
+//        }
+//    }
 }

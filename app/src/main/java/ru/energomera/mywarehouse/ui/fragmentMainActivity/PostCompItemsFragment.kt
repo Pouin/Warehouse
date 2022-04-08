@@ -15,10 +15,6 @@ class PostCompItemsFragment : Fragment() {
 
     val itemLists: MutableList<CompListEntity> = generateList()
 
-//    private var adapter: RecyclerView.Adapter<CompsItemAdapter.CompListViewHolder>? = null
-//    private var layoutManager: RecyclerView.LayoutManager? = null
-
-
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_post_comp_items, container, false)
     }
