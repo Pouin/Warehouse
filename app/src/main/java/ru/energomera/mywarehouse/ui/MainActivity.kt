@@ -24,6 +24,7 @@ import ru.energomera.mywarehouse.R
 
 class MainActivity : AppCompatActivity()  {
 
+    val APP_PREFERENCES = "mysettings"
     private lateinit var appBarConfiguration: AppBarConfiguration
     private var bt: BluetoothSPP? = null
 

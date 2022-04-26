@@ -3,7 +3,9 @@ package ru.energomera.mywarehouse.ui.fragmentMainActivity
 import android.app.Activity
 import android.app.Application
 import android.bluetooth.BluetoothAdapter
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,19 +17,23 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import app.akexorcist.bluetotohspp.library.BluetoothState
+import ru.energomera.mywarehouse.BluetoothAdapterProvider
 import ru.energomera.mywarehouse.R
+import ru.energomera.mywarehouse.util.Constants
 
-class PutUnformedItemsFragment : Fragment() {
+class PutUnformedItemsFragment(private val adapterProvider: BluetoothAdapterProvider) : Fragment() {
 
     lateinit var bt: BluetoothSPP
+    lateinit var mSettings: SharedPreferences
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         var view: View = inflater.inflate(R.layout.fragment_put_unformed_items, container, false)
 
         var textRead: TextView = view.findViewById(R.id.editTextToScanBth)
         var textStatus: TextView = view.findViewById(R.id.textStatusss)
+        mSettings = activity!!.applicationContext.getSharedPreferences(Constants.APP_PREFERENCES, Context.MODE_PRIVATE)
 
-        bt = BluetoothSPP(requireActivity().applicationContext)
+        bt = BluetoothSPP(adapterProvider.getContext())
         bt.setOnDataReceivedListener { data, message ->
             textRead.text = message.toString()
         }

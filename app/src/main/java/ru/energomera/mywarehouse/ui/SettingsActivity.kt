@@ -15,11 +15,16 @@ import androidx.core.app.ActivityCompat
 import app.akexorcist.bluetotohspp.library.BluetoothSPP
 import app.akexorcist.bluetotohspp.library.BluetoothState
 import app.akexorcist.bluetotohspp.library.DeviceList
+import ru.energomera.mywarehouse.BluetoothAdapterProvider
+import android.content.SharedPreferences
+import ru.energomera.mywarehouse.util.Constants
 
-class SettingsActivity : AppCompatActivity() {
+
+class SettingsActivity() : AppCompatActivity() {
 
     lateinit var bt: BluetoothSPP
     var textStatus: TextView? = null
+    var mSettings: SharedPreferences? = null
 
     lateinit var btnConnect: Button
     private val permissionCode = 2
@@ -32,6 +37,7 @@ class SettingsActivity : AppCompatActivity() {
         bt = BluetoothSPP(applicationContext)
         btnConnect = findViewById(R.id.btnConnectScan)
         val textRead: TextView = findViewById(R.id.editTextToScanBth)
+        mSettings = getSharedPreferences(Constants.APP_PREFERENCES, MODE_PRIVATE)
 
         if (!bt.isBluetoothAvailable) {
             Toast.makeText(applicationContext, "Bluetooth is not available", Toast.LENGTH_SHORT).show()
@@ -108,6 +114,14 @@ class SettingsActivity : AppCompatActivity() {
                 btnConnect.text = getString(R.string.disconnectBth)
                 textDeviceName!!.text = name
                 textDeviceMac!!.text = address
+
+                val APP_PREFERENCES_BT_NAME = name
+                val APP_PREFERENCES_BT_MAC = address
+
+                val editor: SharedPreferences.Editor = mSettings!!.edit()
+                editor.putString(APP_PREFERENCES_BT_NAME, name)
+                editor.putString(APP_PREFERENCES_BT_MAC, address)
+                editor.apply()
             }
         })
     }

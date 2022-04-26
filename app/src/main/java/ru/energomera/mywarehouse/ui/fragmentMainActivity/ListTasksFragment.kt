@@ -12,7 +12,7 @@ import ru.energomera.mywarehouse.R
 class ListTasksFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_list_tasks, container, false)
+        return inflater.inflate(R.layout.del_fragment_list_tasks, container, false)
     }
 
 }

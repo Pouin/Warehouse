@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/settings_container"
+
     android:fitsSystemWindows="true"
     tools:context=".ui.SettingsActivity">
 
@@ -89,6 +90,7 @@
         android:layout_marginTop="12dp"
         android:inputType="text"
         android:minHeight="48dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
