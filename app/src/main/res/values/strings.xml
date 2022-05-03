@@ -20,9 +20,9 @@
     <string name="versionApp">Версия 1.0.0 (alfa)</string>
 
     <!-- Bluetooth   -->
-    <string name="bthStatus_notCon">Статус Bluetooth: Не подключен</string>
-    <string name="bthStatus_failed">Статус Bluetooth: Не удалось подключится</string>
-    <string name="btnStatus_Connect">Статус Bluetooth: Подключен</string>
+    <string name="bthStatus_notCon">Bluetooth cтатус: Не подключен</string>
+    <string name="bthStatus_failed">Bluetooth cтатус: Не удалось подключится</string>
+    <string name="btnStatus_Connect">Bluetooth cтатус: Подключен</string>
     <string name="connectBth">Подключить сканер</string>
     <string name="disconnectBth">Отключить сканер</string>
     <string name="title_activity_settings">SettingsActivity</string>
@@ -43,6 +43,8 @@
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

@@ -27,12 +27,15 @@
         app:layout_constraintTop_toBottomOf="@id/imageView"/>
 
     <TextView
-        android:id="@+id/versionApp"
+        android:id="@+id/textStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employeeFIO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/versionApp"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/employeeFIO" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/bthStatus_notCon"
+        android:textSize="12sp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
